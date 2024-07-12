@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+            overflow-x: hidden;
+        }
+
+        .head {
+            height: 7vh;
+            width: 100vw;
+            position: sticky;
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(237, 234, 234, 0.37);
+            padding-top: 2px;
+            padding-bottom: 2px;
+        }
+
+        .navcontainer {
+            height: 70%;
+            width: 97%;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo {
+            width: 10%;
+            height: 100%;
+            margin-right: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .searchbar {
+            width: 45%;
+            height: 100%;
+            margin-right: 60px;
+        }
+
+        .gridnav {
+            width: 35%;
+            height: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            font-family: "Poppins", sans-serif;
+            font-weight: 450;
+            font-size: 17.6px;
+        }
+
+        .login {
+            grid-column: 1/2;
+            width: 80%;
+        }
+
+        .cart {
+            grid-column: 2/3;
+            width: 80%;
+        }
+
+        .seller {
+            grid-column: 3/4;
+            width: 90%;
+        }
+
+        .search {
+            display: inline-block;
+            width: 100%;
+            position: relative;
+            border-radius: 8px;
+            background-color: #d9e4f9;
+        }
+
+        .Searchcontainer {
+            display: flex;
+            justify-content: space-between;
+            flex: auto;
+            background: transparent;
+            width: 100%;
+
+        }
+
+        .searchbutton {
+            border: 0;
+            justify-content: flex-end;
+            height: 40px;
+            border-radius: 2px;
+            cursor: pointer;
+            padding: 8px 8px 8px 12px;
+            background-color: transparent;
+        }
+
+        .Searchbarcontainer {
+            position: relative;
+            display: inline-block;
+            width: 100%;
+            background-color: transparent;
+
+
+        }
+
+        .Searchbar {
+            border: 0;
+            outline: 0 none;
+            font-size: 17px;
+            height: 40px;
+            width: 100%;
+            background-color: transparent;
+            text-overflow: ellipsis;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .slider {
+            width: 1300px;
+            max-width: 100vw;
+            height: 400px;
+            margin: auto;
+
+            position: relative;
+            top: 10%;
+            overflow: hidden;
+        }
+
+        .list {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            display: flex;
+            width: max-content;
+            transition: 1s;
+            overflow: hidden;
+        }
+
+        .list img {
+            width: 1300px;
+            max-width: 100vw;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .buttons {
+            position: absolute;
+            top: 45%;
+            left: 5%;
+            width: 90%;
+            display: flex;
+            justify-content: space-between;
+
+        }
+
+        .buttons button {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #fff5;
+            color: #fff;
+            border: none;
+            font-family: monospace;
+            font-weight: bold;
+            cursor: pointer;
+
+        }
+
+        .dots {
+            position: absolute;
+            bottom: 10px;
+            color: #fff;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        li {
+            list-style: none;
+            width: 10px;
+            height: 10px;
+            background-color: #fff;
+            margin: 20px;
+            border-radius: 20px;
+            transition: 1s;
+
+        }
+
+        .active {
+            width: 30px;
+        }
+
+        @media screen and (max-width:768px) {
+            .slider {
+                height: 400px;
+            }
+        }
+
+        .category {
+            width: 95vw;
+            border: 1px solid black;
+            display: flex;
+            flex-direction: column;
+        }
+        .ctg {
+            height: 280px;
+            width: 240px;
+            border: 2px solid rgba(0, 0, 0, 0.202);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 5px;
+            
+        }
+        .ct {
+            height: 80%;
+            width: 80%;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        .ct:hover{
+            transform: scale(1.1) ;
+            transition: 1s;
+        }
+        .elec_container{
+            width: 95%;
+        }
+
+        .electronics {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+            width: 100%;
+        }.fashion{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+            width: 100%;
+        }
+        .a {
+            grid-column: 1/2;
+        }
+
+        .b {
+            grid-column: 2/3;
+        }
+
+        .c {
+            grid-column: 3/4;
+        }
+
+        .d {
+            grid-column: 4/5;
+        }
+
+        .e {
+            grid-column: 5/6;
+        }
+
+        h2 {
+            font-family: "Poppins", sans-serif;
+            font-size: 27px;
+            font-weight: 600;
+        }
+    </style>
+</head>
+
+
+<body>
+    <div class="head">
+        <div class="navcontainer">
+            <div class="logo">
+                <img src="logo.png" alt="logo" style="height: 50px; width: 150px;">
+            </div>
+            <div class="searchbar">
+                <form class="search" action="/search" method="GET">
+                    <div class="Searchcontainer">
+                        <button class="searchbutton" type="submit" aria-label="Search for Products, Brands and More"
+                            title="Search for Products, Brands and More" fdprocessedid="2kqb8u">
+                            <svg width="24" height="24" class="" viewBox="0 0 24 24" fill="none">
+                                <title>Search Icon</title>
+                                <path
+                                    d="M10.5 18C14.6421 18 18 14.6421 18 10.5C18 6.35786 14.6421 3 10.5 3C6.35786 3 3 6.35786 3 10.5C3 14.6421 6.35786 18 10.5 18Z"
+                                    stroke="#717478" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+                                </path>
+                                <path d="M16 16L21 21" stroke="#717478" stroke-width="1.4" stroke-linecap="round"
+                                    stroke-linejoin="round"></path>
+                            </svg>
+                        </button>
+                        <div class="Searchbarcontainer">
+                            <input class="Searchbar" type="text" title="Search for Products, Brands and More" name="q"
+                                autocomplete="off" placeholder="Search for Products, Brands and More" value="">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="gridnav">
+                <div class="login">
+                    Login</div>
+                <div class="cart">Cart</div>
+                <div class="seller">Become a Seller</div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="slider">
+            <div class="list">
+                <div class="item">
+                    <img src="https://i1.wp.com/stylepilot.com/wp-content/uploads/2019/06/timex-banner-watches-redwing.jpg?ssl=1"
+                        alt="img1">
+                </div>
+                <div class="item">
+                    <img src="https://mir-s3-cdn-cf.behance.net/project_modules/fs/02910227410417.56364b0980c33.jpg"
+                        alt="img2">
+                </div>
+                <div class="item">
+                    <img src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/264e3629894817.5609864fcd16d.png"
+                        alt="img3">
+                </div>
+                <div class="item">
+                    <img src="https://i.pinimg.com/originals/6f/8b/0e/6f8b0eb01612b5ee776631ac513de7e0.jpg" alt="img4">
+                </div>
+                <div class="item">
+                    <img src="https://trikart.com/media/wysiwyg/iPhone_15_Pro_1.jpg" alt="img5">
+                </div>
+            </div>
+
+
+            <div class="buttons">
+                <button id="prev"><</button>
+                <button id="next">></button>
+            </div>
+            <ul class="dots">
+                <li class="active"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+        <div class="category">
+            <div class="elec_container">
+                <h2>Electronics</h2>
+                <div class="electronics">
+                    <div class="ctg a">
+                        <img class="ct" src="https://s13emagst.akamaized.net/products/60458/60457155/images/res_bc44fa0bbdf0de65a3c655809352aba9.jpg" alt="img1">
+                    </div>
+                    <div class="ctg b">
+                        <img class="ct"
+                            src="https://www.bhphotovideo.com/images/images2500x2500/beats_by_dr_dre_900_00198_01_studio_wireless_headphones_matte_1016367.jpg"
+                            alt="img2">
+                    </div>
+                    <div class="ctg c">
+                        <img class="ct"
+                            src="https://i5.walmartimages.com/asr/af3ee92c-3be1-4894-9cd1-b1cc6fff001d.caebe352a4d3d5ac00e8bc3eaecf6540.jpeg"
+                            alt="img3">
+                    </div>
+                    <div class="ctg d">
+                        <img class="ct"
+                            src="https://www.bhphotovideo.com/images/images2500x2500/apple_mj362ll_a_apple_watch_38mm_smartwatch_1293065.jpg"
+                            alt="img4">
+                    </div>
+                    <div class="ctg e">
+                        <img  class="ct" src="https://www.bhphotovideo.com/images/images2500x2500/lg_32ul950_w_32_class_ultrafine_1441614.jpg" alt="img5">
+                    </div>
+                 
+                </div>
+            </div>
+            <div class="elec_container">
+                <h2>Beauty & Fashion</h2>
+                <div class="fashion">
+                    <div class="ctg a">
+                        <img class="ct" src="https://purepng.com/public/uploads/large/purepng.com-lipstickclothinglipstickfashion-objects-girl-makeup-stick-sexy-beauty-accessory-lipstick-lip-lips-cosmetics-631522935839vcyto.png" alt="img1">
+                    </div>
+                    <div class="ctg b">
+                        <img class="ct"
+                            src="https://i.pinimg.com/originals/42/c9/99/42c99956a65acec19c745c7ee44f905f.jpg"
+                            alt="img2">
+                    </div>
+                    <div class="ctg c">
+                        <img class="ct"
+                            src="https://cdna.lystit.com/photos/gucci/fcf3ade1/gucci-Black-GG-Marmont-Velvet-Shoulder-Bag.jpeg"
+                            alt="img3">
+                    </div>
+                    <div class="ctg d">
+                        <img class="ct"
+                            src="https://images-na.ssl-images-amazon.com/images/I/71Y3gJ3ypJL._AC_UL1500_.jpg"
+                            alt="img4">
+                    </div>
+                    <div class="ctg e">
+                        <img  class="ct" src="https://i5.walmartimages.com/asr/56ca1ae0-6118-44ce-8996-e3e293e7ae22_1.590ceb85d1df43f05f359c4972a7c66d.jpeg" alt="img5">
+                    </div>
+                 
+                </div>
+            </div>
+
+        </div>
+        <div class="fashion"></div>
+        <div class="fashion"></div>
+    </div>
+    </div>
+    <div class="footer"></div>
+    <script src="script.js"></script>
+</body>
+
+</html>
