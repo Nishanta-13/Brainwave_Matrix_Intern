@@ -1,0 +1,45 @@
+[
+    {
+        "id":1,
+        "name":"LP001",
+        "price":150,
+        "image":"https://img.makeupalley.com/1/1/8/1/3574012.JPG"
+    },
+    {
+        "id":2,
+        "name":"LP002",
+        "price":100,
+        "image":"https://imgix.bustle.com/zoe-report/2016/10/true-red-800.jpg?w=760&h=760&fit=crop&crop=faces&auto=format%2Ccompress&q=50&dpr=2"
+    },
+    {
+        "id":3,
+        "name":"LP003",
+        "price":250,
+        "image":"https://i5.walmartimages.com/asr/21a4cad9-4a26-4f8e-b653-0378e4c175be_1.fead6583f724dec83f4b67cd554a9c73.jpeg?odnWidth=1000&odnHeight=1000&odnBg=ffffff"
+    },
+    {
+        "id":4,
+        "name":"LP004",
+        "price":310,
+        "image":"https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/resize-w:1080/1111969/yWyilAN6N-3614273747448_1.jpg"
+    },
+    {
+        "id":5,
+        "name":"LP005",
+        "price":200,
+        "image":"https://pngimg.com/uploads/lipstick/lipstick_PNG76274.png"
+    },
+    {
+        "id":6,
+        "name":"LP006",
+        "price":200,
+        "image":"https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/resize-w:1080/1112010/Cd7qD0AWH-3614273250665_1.jpg"
+    },
+    {
+        "id":7,
+        "name":"LP007",
+        "price":110,
+        "image":"https://i5.walmartimages.com/asr/9d15507a-b97f-480e-af6f-981098670774.8028a9e96531d9d8a66fa82891219369.jpeg?odnWidth=1000&odnHeight=1000&odnBg=ffffff"
+    }
+
+]

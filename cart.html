@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flipkart Style Add to Cart</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .product {
+            background: #fff;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .product h2 {
+            margin: 0 0 10px;
+        }
+        .product p {
+            margin: 0 0 10px;
+        }
+        .product button {
+            padding: 10px 20px;
+            background: #ff6200;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .cart {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .cart-items {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 10px;
+        }
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .cart-item button {
+            background: #ff6200;
+            color: white;
+            border: none;
+            padding: 5px;
+            cursor: pointer;
+        }
+        .notification {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            background: #ff6200;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            display: none;
+            z-index: 1000;
+        }
+    </style>
+</head>
+<body>
+    <div class="product">
+        <h2>Product 1</h2>
+        <p>$10.00</p>
+        <button onclick="addToCart('Product 1', 10)">Add to Cart</button>
+    </div>
+    <div class="product">
+        <h2>Product 2</h2>
+        <p>$20.00</p>
+        <button onclick="addToCart('Product 2', 20)">Add to Cart</button>
+    </div>
+
+    <div class="cart">
+        <h3>Cart</h3>
+        <ul class="cart-items"></ul>
+        <p>Total: $<span class="cart-total">0.00</span></p>
+    </div>
+
+    <div class="notification" id="notification">Item added to cart</div>
+
+    <script>
+        const cart = [];
+        function addToCart(productName, productPrice) {
+            const existingItem = cart.find(item => item.name === productName);
+            if (existingItem) {
+                existingItem.quantity++;
+            } else {
+                cart.push({ name: productName, price: productPrice, quantity: 1 });
+            }
+            updateCartUI();
+            showNotification();
+        }
+        function updateCartUI() {
+            const cartItemsElement = document.querySelector('.cart-items');
+            const cartTotalElement = document.querySelector('.cart-total');
+            cartItemsElement.innerHTML = '';
+
+            let total = 0;
+            cart.forEach((item, index) => {
+                const listItem = document.createElement('li');
+                listItem.className = 'cart-item';
+
+                listItem.innerHTML = `
+                    ${item.name} - $${item.price.toFixed(2)} x ${item.quantity}
+                    <button onclick="decreaseQuantity(${index})">-</button>
+                    <button onclick="increaseQuantity(${index})">+</button>
+                `;
+                
+                cartItemsElement.appendChild(listItem);
+                total += item.price * item.quantity;
+            });
+            cartTotalElement.textContent = total.toFixed(2);
+        }
+
+        function increaseQuantity(index) {
+            cart[index].quantity++;
+            updateCartUI();
+        }
+
+        function decreaseQuantity(index) {
+            if (cart[index].quantity > 1) {
+                cart[index].quantity--;
+            } else {
+                cart.splice(index, 1); // Remove item if quantity is 1 and decrease button is clicked
+            }
+            updateCartUI();
+        }
+
+        function showNotification() {
+            const notification = document.getElementById('notification');
+            notification.style.display = 'block';
+            setTimeout(() => {
+                notification.style.display = 'none';
+            }, 2000);
+        }
+    </script>
+</body>
+</html>

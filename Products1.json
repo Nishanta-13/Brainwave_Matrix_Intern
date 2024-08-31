@@ -1,0 +1,32 @@
+[
+    {
+        "id":1,
+        "name":"Phone1",
+        "price":350,
+        "image":"https://achaumobile.com/wp-content/uploads/2023/09/15-PM-5.jpg"
+    },
+    {
+        "id":2,
+        "name":"Phone2",
+        "price":300,
+        "image":"https://specifications-pro.com/wp-content/uploads/2023/05/Oppo-Reno10-2.jpg"
+    },
+    {
+        "id":3,
+        "name":"Phone3",
+        "price":250,
+        "image":"https://cdn.media.amplience.net/i/xcite/652683-04?img404=default&w=2048&qlt=75&fmt=auto"
+    },
+    {
+        "id":4,
+        "name":"Phone4",
+        "price":310,
+        "image":"https://www.jungle.lk/wp-content/uploads/2020/09/Xiaomi-Redmi-Note-9-Pro-Mobile-Phone-With-64GB-6GB-RAM-6.67-Inch-Dot-Display-2.jpg"
+    },
+    {
+        "id":5,
+        "name":"Phone5",
+        "price":200,
+        "image":"https://image01.realme.net/general/20230321/1679382891955.png"
+    }
+]

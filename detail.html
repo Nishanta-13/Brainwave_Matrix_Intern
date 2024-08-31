@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            overflow-x: hidden;
+        }
+
+        .items {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .itemcont {
+            width: 90%;
+            height: 80%;
+            display: grid;
+            grid-template-rows: repeat(5, 1fr);
+            gap: 30px;
+        }
+        .itmbox {
+            height: 100%;
+            width: 95%;
+            border: 2px solid rgba(0, 0, 0, 0.5);
+            border-radius:10px ;
+            padding: 5px;
+            display: flex;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+        }
+        .itm {
+            height: 95%;
+            width:35% ;
+            border: 2px solid rgba(0, 0, 0, 0.202);
+            border-radius: 5px;
+            margin: auto;
+            cursor: pointer;
+        }
+
+        .itmimg {
+            height: 100%;
+            width: 100%;
+            margin: auto;
+            z-index: -1;
+            position: relative;
+            
+        }
+
+        .img {
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        
+            
+        }.sbox{
+            font-family: "Poppins", sans-serif; 
+            display: grid;
+            grid-template-rows: repeat(3,1fr);
+            margin-left: 20px;
+        }.itmname{
+            font-size: 25px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: 0.5s;
+
+        }.itmname:hover{
+            color:black;
+            font-size: 30px;
+            
+        }
+        .itmprice{    
+            font-weight: 600;
+            font-size: 25px;
+            padding-top: 20px;
+        }.itmabt{
+            font-size: 18px;
+        }  
+        .crttxt{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            height: 40px;
+            width: 50%;
+            border-radius:20px ;
+            background-color: black;
+            border: 1px solid white;
+            color: white;
+            padding: 5px;
+            border: none;
+            width: 50%;
+            font-weight: 500;
+            font-family:  "Poppins", sans-serif; 
+            font-size: 16px;
+            cursor: pointer;
+            transform: translateX(-50%) translateY(100px);
+            opacity: 0;
+        }
+        .itm:hover button{
+            opacity: 1;
+            transition: 1s;
+            cursor: pointer;
+            transform: translateX(-50%);
+        }button{
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="tmplt"></div>
+    <div class="filtercont">
+        <div class="sort">
+
+        </div>
+    </div>
+    <div class="items">
+        <div class="itemcont">
+            <div class="itmbox">
+               
+            </div>
+        </div>
+    </div>
+    <script src="detail.js"></script>
+</body>
+
+</html>
